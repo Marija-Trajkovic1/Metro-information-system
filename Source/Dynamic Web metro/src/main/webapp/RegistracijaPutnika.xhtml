@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+         
+	<h:head>
+		<title>Registracija putnika</title>
+	</h:head>
+
+	<h:body>
+	 <h2>Unesite podatke za registraciju</h2>
+		<h:form>
+			<p:panelGrid columns="2" cellpadding="5">
+	            <p:outputLabel value="Redni broj putnika" />
+	            <p:inputText value="#{osobaController.osoba.idOsobe}"></p:inputText> 
+				<p:outputLabel value="Ime putnika" />
+				<p:inputText value="#{osobaController.osoba.imeOsobe}"></p:inputText>
+				<p:outputLabel value="Prezime" />
+				<p:inputText value="#{osobaController.osoba.prezimeOsobe}"></p:inputText>
+				<p:outputLabel value="JMBG osobe" />
+				<p:inputText value="#{osobaController.osoba.jmbgOsobe}"></p:inputText>
+	            <p:outputLabel value="Broj lične karte putnika" />
+				<p:inputText value="#{osobaController.osoba.brlkOsobe}"></p:inputText>
+	            <p:outputLabel value="Datum rođenja putnika" />
+				<p:inputText value="#{osobaController.osoba.datumRodjenja}"></p:inputText>
+				<p:outputLabel value="Stanje na kartici" />
+				<p:inputText value="#{osobaController.osoba.stanjeNaKartici}"></p:inputText>
+				<p:outputLabel></p:outputLabel>
+				<p:commandButton value="Sačuvaj moje podatke"
+					action="#{osobaController.dodajOsobu(osobaController.osoba.idOsobe, osobaController.osoba.imeOsobe, osobaController.osoba.prezimeOsobe, osobaController.osoba.jmbgOsobe, osobaController.osoba.brlkOsobe, osobaController.osoba.datumRodjenja, osobaController.osoba.stanjeNaKartici)}"> 
+					</p:commandButton>
+								
+				<p:button  value="Odustani" outcome="index.xhtml"> </p:button>	
+			</p:panelGrid>	
+		</h:form>
+	</h:body>	
+</html>

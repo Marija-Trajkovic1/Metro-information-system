@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<title>Kupovina karte karticom</title>
+	</h:head>
+	
+	<h:body>
+		
+		
+		<h:form>
+			<div>
+				<h:outputLabel value="Unesite podatke za vasu kartu"></h:outputLabel>
+			</div>
+			
+			
+			<h:outputLabel value="Identifikator kupljene karte"/>
+			<div>
+      			<h:inputText value="#{kupovinaKarteController.kupovina.idKupovine}"></h:inputText>
+      		</div> 
+			
+			<h:outputLabel value="Identifikator putnika"/>
+			<div>
+      			<h:inputText value="#{kupovinaKarteController.kupovina.idOsobe}"></h:inputText>
+      		</div>  
+      		
+      		<div>
+      		 <p:commandButton value="Sačuvaj kupljenu kartu"
+					action="#{kupovinaKarteController.dodajKupovinuKarticom(kupovinaKarteController.kupovina.idKupovine, kupovinaKarteController.kupovina.idOsobe)}"> </p:commandButton> 
+       		</div>
+       		
+       		<div>
+       			<p:outputLabel value="Obrisi kupljenu kartu" />	
+				<p:inputText value="#{kupovinaKarteController.kupovina.idKupovine}"></p:inputText>
+				<p:commandButton value="Obrisi"
+					action="#{kupovinaKarteController.obrisiKupovinu(kupovinaKarteController.idKupovine)}"> 
+					</p:commandButton>
+       		</div>
+       		
+		</h:form>
+		
+			<p:button  value="Odustani" outcome="index.xhtml"> </p:button>
+		
+		<h:form>
+			<h:outputLabel value="Dostupne karte:"/>			
+			
+			<h:dataTable value="#{kartaController.listaKarti()}" var="k"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    			style="color:white;font-size:23px;font-weight:bold; margin-top:30px;text-shadow: 1px 1px 2px black, 0 0 15px green, 0 0 5px darkgreen; border:3px solid #a5e840; background-color:rgba(211, 239, 167,0.7);text-align:center; border-spacing: 5px; width:80%; margin-left:10%;">
+    	
+	    		<h:column >
+	    			<f:facet  name="header">
+	    				Identifikator
+	    			</f:facet>
+	    			<h:outputText value="#{k.idKarte}"/>
+	    		</h:column>
+	    		
+	    		<h:column>
+	    			<f:facet name="header">
+	    				Tip karte
+					</f:facet>
+	    			<h:outputText value="#{k.tip}"/>
+	    		</h:column>
+    		
+	    		<h:column>
+	    			<f:facet name="header">
+	    				Vazenje karte
+					</f:facet>
+	    			<h:outputText value="#{k.vazenjeKarteDo}"/>
+	    		</h:column>
+	    	
+    		</h:dataTable>	
+		</h:form>
+	</h:body>
+</html>	  

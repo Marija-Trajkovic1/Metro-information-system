@@ -1,0 +1,12 @@
+Model\KupovinaKarte.class
+Model\Karta.class
+Services\OsobaService.class
+Services\KartaService.class
+Impl\TipMesecneServiceImpl.class
+Services\KupovinaKarteService.class
+Model\TipMesecne.class
+Impl\OsobaServiceImpl.class
+Services\TipMesecneService.class
+Impl\KartaServiceImpl.class
+Impl\KupovinaKarticeServiceImpl.class
+Model\Osoba.class

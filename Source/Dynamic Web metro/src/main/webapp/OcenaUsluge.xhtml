@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	 	  	  
+	<h:head>
+		<title>Ocena usluge</title>
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<div>
+				<p:outputLabel value="Ocenite uslugu" />	
+				<p:inputText value="#{osobaController.osoba.ocenaUsluge}"></p:inputText>
+			</div>
+			
+			<div>
+				<p:outputLabel value="ID korisnika" />	
+				<p:inputText value="#{osobaController.osoba.idOsobe}"></p:inputText>
+			</div>
+			
+				<p:commandButton value="Oceni"
+						action="#{osobaController.oceniUslugu(osobaController.osoba.idOsobe, osobaController.osoba.ocenaUsluge)}"> 
+						</p:commandButton>
+		</h:form>
+		
+		<p:button  value="Odustani" outcome="index.xhtml"> </p:button>
+	</h:body>
+</html>

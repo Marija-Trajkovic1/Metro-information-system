@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		<title>Glavna stranica</title>
+	</h:head>
+	
+  	<h:body>
+      <h2>Izaberite uslugu koju zelite da obavite</h2>
+    	       	
+    	<h:form>
+        	  	<div>
+        	  	<h3> Registracija putnika</h3> 	  	
+                  <p:button value="Registracija putnika" outcome="RegistracijaPutnika.xhtml" />
+				</div>  
+				
+				<div>
+				<h3>Kupovina karte</h3>
+	              <p:button value="Kupi kartu" outcome="KupovinaKarte.xhtml" />
+         	 	</div>
+         	 	
+				<div>
+				<h3>Kupovina karte karticom</h3>
+                  <p:button value="Kupi kartu karticom" outcome="KupovinaKarticom.xhtml" />
+            	</div>
+            	
+				<div>
+				<h3>Ocena usluge</h3>
+                  <p:button value="Ocenite uslugu" outcome="OcenaUsluge.xhtml" />
+            	</div>
+		</h:form>		
+      
+   </h:body>
+</html>
